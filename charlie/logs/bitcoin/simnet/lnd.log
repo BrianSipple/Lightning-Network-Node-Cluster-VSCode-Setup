@@ -1,0 +1,19 @@
+2018-12-07 00:06:03.398 [INF] LTND: Version: 0.5.1-beta commit=v0.5.1-beta-73-gf4b6e0b7755982fc571e2763e0a2ec93c8e89900, build=production, logging=default
+2018-12-07 00:06:03.398 [INF] LTND: Active chain: Bitcoin (network=simnet)
+2018-12-07 00:06:03.399 [INF] CHDB: Checking for schema update: latest_version=7, db_version=7
+2018-12-07 00:06:03.409 [INF] RPCS: password RPC server listening on 127.0.0.1:10003
+2018-12-07 00:06:03.409 [INF] RPCS: password gRPC proxy started at 127.0.0.1:8003
+2018-12-07 00:06:03.409 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2018-12-07 00:08:15.280 [INF] LTND: Version: 0.5.1-beta commit=v0.5.1-beta-73-gf4b6e0b7755982fc571e2763e0a2ec93c8e89900, build=production, logging=default
+2018-12-07 00:08:15.280 [INF] LTND: Active chain: Bitcoin (network=simnet)
+2018-12-07 00:12:38.527 [INF] LTND: Received SIGINT (Ctrl+C).
+2018-12-07 00:12:38.527 [INF] LTND: Shutting down...
+2018-12-07 00:12:38.527 [INF] LTND: Gracefully shutting down.
+2018-12-07 00:13:19.057 [INF] LTND: Received SIGINT (Ctrl+C).
+2018-12-07 00:13:19.057 [INF] LTND: Shutting down...
+2018-12-07 00:13:19.057 [INF] LTND: Gracefully shutting down.
+2018-12-07 00:13:19.057 [INF] LTND: Shutdown complete2018-12-07 00:13:19.066 [INF] CHDB: Checking for schema update: latest_version=7, db_version=7
+2018-12-07 00:13:19.077 [INF] RPCS: password RPC server listening on 127.0.0.1:10003
+2018-12-07 00:13:19.077 [INF] RPCS: password gRPC proxy started at 127.0.0.1:8003
+2018-12-07 00:13:19.077 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2018-12-07 00:13:19.077 [INF] LTND: Shutdown complete
