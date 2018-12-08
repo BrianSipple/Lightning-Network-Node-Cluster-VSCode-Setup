@@ -34,6 +34,14 @@
       "args": [
         "${workspaceFolder}/bin/lncli-getinfo.sh"
       ],
+    },
+    {
+      "label": "Alice | lncli | newaddrees | np2wkh",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli-newaddress-np2wkh.sh"
+      ],
     }
   ]
 }
