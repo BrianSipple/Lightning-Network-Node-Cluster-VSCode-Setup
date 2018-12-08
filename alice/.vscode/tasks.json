@@ -42,6 +42,14 @@
       "args": [
         "${workspaceFolder}/bin/lncli-newaddress-np2wkh.sh"
       ],
+    },
+    {
+      "label": "Alice | lncli | walletbalance",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/wallet-balance.sh"
+      ],
     }
   ]
 }

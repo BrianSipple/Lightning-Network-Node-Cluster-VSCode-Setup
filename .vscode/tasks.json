@@ -10,6 +10,54 @@
       "args": [
         "${workspaceFolder}/bin/start-btcd.sh"
       ]
-    }
+    },
+    {
+      "label": "Start btcd | Alice",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/start-btcd-alice.sh"
+      ]
+    },
+    {
+      "label": "Start btcd | Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/start-btcd-bob.sh"
+      ]
+    },
+    {
+      "label": "Start btcd | Charlie",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/start-btcd-charlie.sh"
+      ]
+    },
+    {
+      "label": "Generate blocks | 100",
+      "type": "shell",
+      "command": "btcctl",
+      "args": [
+        "--simnet",
+        "--rpcuser=brian",
+        "--rpcpass=foobar",
+        "generate",
+        "100"
+      ]
+    },
+    {
+      "label": "Generate blocks | 400",
+      "type": "shell",
+      "command": "btcctl",
+      "args": [
+        "--simnet",
+        "--rpcuser=brian",
+        "--rpcpass=foobar",
+        "generate",
+        "400"
+      ]
+    },
   ]
 }
