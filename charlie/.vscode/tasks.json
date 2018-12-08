@@ -50,6 +50,22 @@
       "args": [
         "${workspaceFolder}/bin/lncli/wallet-balance.sh"
       ],
+    },
+    {
+      "label": "Charlie | lncli | connect to Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/connect-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Charlie | lncli | list peers",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/list-peers.sh"
+      ],
     }
   ]
 }
