@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "alice"
+		},
+		{
+			"path": "bob"
+		},
+		{
+			"path": "charlie"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

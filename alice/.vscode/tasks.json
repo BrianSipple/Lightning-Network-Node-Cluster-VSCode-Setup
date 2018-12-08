@@ -1,0 +1,39 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Alice | lnd | start",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/start-lnd.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | create",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli-create.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | unlock",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli-unlock.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | getinfo",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli-getinfo.sh"
+      ],
+    }
+  ]
+}
