@@ -16,7 +16,7 @@
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli-create.sh"
+        "${workspaceFolder}/bin/lncli/create.sh"
       ],
     },
     {
@@ -24,7 +24,7 @@
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli-unlock.sh"
+        "${workspaceFolder}/bin/lncli/unlock.sh"
       ],
     },
     {
@@ -32,7 +32,7 @@
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli-getinfo.sh"
+        "${workspaceFolder}/bin/lncli/getinfo.sh"
       ],
     },
     {
@@ -40,7 +40,7 @@
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli-newaddress-np2wkh.sh"
+        "${workspaceFolder}/bin/lncli/newaddress-np2wkh.sh"
       ],
     },
     {
@@ -48,7 +48,7 @@
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/wallet-balance.sh"
+        "${workspaceFolder}/bin/lncli/wallet-balance.sh"
       ],
     }
   ]
