@@ -60,6 +60,46 @@
       ],
     },
     {
+      "label": "Alice | lncli | open payment channel to Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/open-payment-channel-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | close channel to Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/close-channel-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | send payment to Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/send-payment-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | send payment to Charlie",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/send-payment-to-charlie.sh"
+      ],
+    },
+    {
+      "label": "Alice | lncli | list channels",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/list-channels.sh"
+      ],
+    },
+    {
       "label": "Alice | lncli | list peers",
       "type": "shell",
       "command": "zsh",

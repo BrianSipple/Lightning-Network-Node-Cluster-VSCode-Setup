@@ -36,6 +36,30 @@
       ]
     },
     {
+      "label": "Generate blocks | 1",
+      "type": "shell",
+      "command": "btcctl",
+      "args": [
+        "--simnet",
+        "--rpcuser=brian",
+        "--rpcpass=foobar",
+        "generate",
+        "1"
+      ]
+    },
+    {
+      "label": "Generate blocks | 6",
+      "type": "shell",
+      "command": "btcctl",
+      "args": [
+        "--simnet",
+        "--rpcuser=brian",
+        "--rpcpass=foobar",
+        "generate",
+        "6"
+      ]
+    },
+    {
       "label": "Generate blocks | 100",
       "type": "shell",
       "command": "btcctl",

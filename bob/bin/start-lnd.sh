@@ -8,6 +8,8 @@ lnd \
   --rpclisten=localhost:10002 \
   --listen=localhost:10012 \
   --restlisten=localhost:8002 \
+  --datadir=data \
+  --logdir=log \
   --bitcoin.simnet
 
 

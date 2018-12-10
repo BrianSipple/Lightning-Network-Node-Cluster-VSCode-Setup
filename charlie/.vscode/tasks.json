@@ -36,6 +36,14 @@
       ],
     },
     {
+      "label": "Charlie | lncli | list channels",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/list-channels.sh"
+      ],
+    },
+    {
       "label": "Charlie | lncli | newaddrees | np2wkh",
       "type": "shell",
       "command": "zsh",
@@ -57,6 +65,22 @@
       "command": "zsh",
       "args": [
         "${workspaceFolder}/bin/lncli/connect-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Charlie | lncli | open channel to Bob",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/open-channel-to-bob.sh"
+      ],
+    },
+    {
+      "label": "Charlie | lncli | add invoice",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/add-invoice.sh"
       ],
     },
     {

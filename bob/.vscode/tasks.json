@@ -36,11 +36,27 @@
       ],
     },
     {
+      "label": "Bob | lncli | list channels",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/list-channels.sh"
+      ],
+    },
+    {
       "label": "Bob | lncli | newaddrees | np2wkh",
       "type": "shell",
       "command": "zsh",
       "args": [
         "${workspaceFolder}/bin/lncli/newaddress-np2wkh.sh"
+      ],
+    },
+    {
+      "label": "Bob | lncli | add invoice",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/add-invoice.sh"
       ],
     },
     {
