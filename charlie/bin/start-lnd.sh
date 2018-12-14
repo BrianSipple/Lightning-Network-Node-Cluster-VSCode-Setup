@@ -1,6 +1,6 @@
 ##################
 # This configuration will be applied after reading from lnd.conf,
-# and will overwrite the lnd.conf option if applicable.
+# and will overwrite the corresponding lnd.conf option if applicable.
 ##################
 
 
@@ -8,7 +8,13 @@ lnd \
   --rpclisten=localhost:10003 \
   --listen=localhost:10013 \
   --restlisten=localhost:8003 \
-  --bitcoin.simnet
+  --datadir=data \
+  --logdir=log \
+  --minchansize=250000 \
+  --alias=Charlie \
+  --color=#FFFD1E \
+  # --bitcoin.simnet \
+  --bitcoin.testnet \
 
 
 ##

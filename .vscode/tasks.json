@@ -4,6 +4,14 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Start bitcoind",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/start-bitcoind.sh"
+      ]
+    },
+    {
       "label": "Start btcd",
       "type": "shell",
       "command": "zsh",
@@ -36,7 +44,7 @@
       ]
     },
     {
-      "label": "Generate blocks | 1",
+      "label": "btcctl | Generate blocks | 1",
       "type": "shell",
       "command": "btcctl",
       "args": [
@@ -48,7 +56,7 @@
       ]
     },
     {
-      "label": "Generate blocks | 6",
+      "label": "btcctl | Generate blocks | 6",
       "type": "shell",
       "command": "btcctl",
       "args": [
@@ -60,7 +68,7 @@
       ]
     },
     {
-      "label": "Generate blocks | 100",
+      "label": "btcctl | Generate blocks | 100",
       "type": "shell",
       "command": "btcctl",
       "args": [
@@ -72,7 +80,7 @@
       ]
     },
     {
-      "label": "Generate blocks | 400",
+      "label": "btcctl | Generate blocks | 400",
       "type": "shell",
       "command": "btcctl",
       "args": [

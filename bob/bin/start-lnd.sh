@@ -1,7 +1,7 @@
-##################
+########################################################################
 # This configuration will be applied after reading from lnd.conf,
-# and will overwrite the lnd.conf option if applicable.
-##################
+# and will overwrite the corresponding lnd.conf option if applicable.
+########################################################################
 
 
 lnd \
@@ -10,7 +10,11 @@ lnd \
   --restlisten=localhost:8002 \
   --datadir=data \
   --logdir=log \
-  --bitcoin.simnet
+  --minchansize=250000 \
+  --alias=Bob \
+  --color=#FF6182 \
+  # --bitcoin.simnet \
+  --bitcoin.testnet \
 
 
 ##

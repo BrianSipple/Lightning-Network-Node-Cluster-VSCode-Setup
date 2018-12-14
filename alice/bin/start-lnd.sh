@@ -1,13 +1,19 @@
-##################
+########################################################################
 # This configuration will be applied after reading from lnd.conf,
-# and will overwrite the lnd.conf option if applicable.
-##################
+# and will overwrite the corresponding lnd.conf option if applicable.
+########################################################################
 
 lnd \
   --rpclisten=localhost:10001 \
   --listen=localhost:10011 \
   --restlisten=localhost:8001 \
-  --bitcoin.simnet
+  --datadir=data \
+  --logdir=log \
+  --minchansize=250000 \
+  --alias=Alice \
+  --color=#7272F8 \
+  # --bitcoin.simnet \
+  --bitcoin.testnet \
 
 
 ##
