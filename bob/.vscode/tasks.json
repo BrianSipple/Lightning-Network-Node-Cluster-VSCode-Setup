@@ -28,11 +28,27 @@
       ],
     },
     {
-      "label": "Bob | lncli | getinfo",
+      "label": "Bob | lncli | get info",
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli/getinfo.sh"
+        "${workspaceFolder}/bin/lncli/get-info.sh"
+      ],
+    },
+    {
+      "label": "Bob | lncli | get network info",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/get-network-info.sh"
+      ],
+    },
+    {
+      "label": "Bob | lncli | describe graph",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/describe-graph.sh"
       ],
     },
     {
