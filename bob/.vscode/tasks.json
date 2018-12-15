@@ -68,6 +68,14 @@
       ],
     },
     {
+      "label": "Bob | lncli | new addrees | p2wkh",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/bin/lncli/new-address-p2wkh.sh"
+      ],
+    },
+    {
       "label": "Bob | lncli | add invoice",
       "type": "shell",
       "command": "zsh",
