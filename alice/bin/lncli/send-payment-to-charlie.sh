@@ -2,6 +2,6 @@
 
 lncli \
   --rpcserver=localhost:10001 \
-  --macaroonpath=data/chain/bitcoin/simnet/admin.macaroon \
+  --macaroonpath=data/chain/bitcoin/testnet/admin.macaroon \
   sendpayment \
   --pay_req=lnsb100u1pwqup63pp58dqfe93ezxu0fyjqwwd0w64c2h4nlnla2yplfauqhrkysr34jjvsdqqcqzys5uju52w8r0sxek2ft4zjljcmham7l3g2n4udkg3krpmj8u4lu68rrcxjsweace6cug8rgw8snn30ye9srqkcr25ftmughg26df9y3rqp7g0pwy
