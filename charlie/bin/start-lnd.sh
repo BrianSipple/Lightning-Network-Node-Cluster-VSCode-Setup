@@ -9,7 +9,7 @@ lnd \
   --listen=localhost:10013 \
   --restlisten=localhost:8003 \
   --datadir=data \
-  --logdir=log \
+  --logdir=logs \
   --minchansize=250000 \
   --alias=Charlie \
   --color=#FFFD1E \

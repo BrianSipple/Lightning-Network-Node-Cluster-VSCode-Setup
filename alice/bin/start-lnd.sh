@@ -8,7 +8,7 @@ lnd \
   --listen=localhost:10011 \
   --restlisten=localhost:8001 \
   --datadir=data \
-  --logdir=log \
+  --logdir=logs \
   --minchansize=250000 \
   --alias=Alice \
   --color=#7272F8 \

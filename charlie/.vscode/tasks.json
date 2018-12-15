@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Charlie | lnd | start",
+      "label": "Charlie | lnd | start lnd",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -12,11 +12,11 @@
       ],
     },
     {
-      "label": "Charlie | lncli | create",
+      "label": "Charlie | lncli | create wallet",
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli/create.sh"
+        "${workspaceFolder}/bin/lncli/create-wallet.sh"
       ],
     },
     {

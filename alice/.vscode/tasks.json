@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Alice | lnd | start",
+      "label": "Alice | lnd | start lnd",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -12,11 +12,11 @@
       ],
     },
     {
-      "label": "Alice | lncli | create",
+      "label": "Alice | lncli | create wallet",
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli/create.sh"
+        "${workspaceFolder}/bin/lncli/create-wallet.sh"
       ],
     },
     {
