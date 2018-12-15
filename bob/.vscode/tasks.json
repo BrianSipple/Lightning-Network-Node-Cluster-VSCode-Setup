@@ -44,11 +44,11 @@
       ],
     },
     {
-      "label": "Bob | lncli | newaddrees | np2wkh",
+      "label": "Bob | lncli | new addrees | np2wkh",
       "type": "shell",
       "command": "zsh",
       "args": [
-        "${workspaceFolder}/bin/lncli/newaddress-np2wkh.sh"
+        "${workspaceFolder}/bin/lncli/new-address-np2wkh.sh"
       ],
     },
     {
