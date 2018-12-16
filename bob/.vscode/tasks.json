@@ -12,51 +12,22 @@
       ],
     },
     {
+      "label": "Bob | lncli | run command",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "${input:lncli_command}"
+      ],
+      "problemMatcher": []
+    },
+    {
       "label": "Bob | lncli | create wallet",
       "type": "shell",
       "command": "zsh",
       "args": [
         "${workspaceFolder}/bin/lncli/create-wallet.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | unlock",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/unlock.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | get info",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/get-info.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | get network info",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/get-network-info.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | describe graph",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/describe-graph.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | list channels",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/list-channels.sh"
       ],
     },
     {
@@ -82,22 +53,24 @@
       "args": [
         "${workspaceFolder}/bin/lncli/add-invoice.sh"
       ],
-    },
+    }
+  ],
+  "inputs": [
     {
-      "label": "Bob | lncli | walletbalance",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/wallet-balance.sh"
-      ],
-    },
-    {
-      "label": "Bob | lncli | list peers",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/list-peers.sh"
-      ],
+      "id": "lncli_command",
+      "description": "⚡️ Select a command",
+      "default": "getinfo",
+      "type": "pickString",
+      "options": [
+        "walletballance",
+        "listpeers",
+        "listchannels",
+        "pendingchannels",
+        "getnetworkinfo",
+        "describegraph",
+        "unlock",
+        "getinfo"
+      ]
     }
   ]
 }

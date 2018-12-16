@@ -10,126 +10,146 @@
       "args": [
         "${workspaceFolder}/bin/start-lnd.sh"
       ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Alice | lncli | run command",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "${input:lncli_command}"
+      ],
+      "problemMatcher": []
     },
     {
       "label": "Alice | lncli | create wallet",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/create-wallet.sh"
+        "--rpcserver=localhost:10001",
+        "create"
       ],
+      "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | unlock",
+      "label": "Alice | lncli | new wallet addrees",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/unlock.sh"
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "newaddress",
+        "${input:wallet_address_type}"
       ],
+      "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | get info",
+      "label": "Alice | lncli | connect to lnd peer node",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/get-info.sh"
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "connect",
+        "${input:node_public_key}"
       ],
+      "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | get network info",
+      "label": "Alice | lncli | disconnect from lnd peer node",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/get-network-info.sh"
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "disconnect",
+        "${input:node_public_key}"
       ],
+      "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | describe graph",
+      "label": "Alice | lncli | open payment channel",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/describe-graph.sh"
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "openchannel",
+        "--node_key=${input:node_public_key}",
+        "--local_amt=${input:satoshis}"
       ],
+      "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | new addrees | np2wkh",
+      "label": "Alice | lncli | close payment channel",
       "type": "shell",
-      "command": "zsh",
+      "command": "lncli",
       "args": [
-        "${workspaceFolder}/bin/lncli/new-address-np2wkh.sh"
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "closechannel",
+        "--funding_txid=${input:funding_txid}",
+        "--output_index=${input:output_index}"
       ],
-    },
-    {
-      "label": "Alice | lncli | new addrees | p2wkh",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/new-address-p2wkh.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | walletbalance",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/wallet-balance.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | connect to Bob",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/connect-to-bob.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | open payment channel to Bob",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/open-payment-channel-to-bob.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | close channel to Bob",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/close-channel-to-bob.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | send payment to Bob",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/send-payment-to-bob.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | send payment to Charlie",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/send-payment-to-charlie.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | list channels",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/list-channels.sh"
-      ],
-    },
-    {
-      "label": "Alice | lncli | list peers",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/lncli/list-peers.sh"
-      ],
+      "problemMatcher": []
     }
+  ],
+  "inputs": [
+    {
+      "id": "lncli_command",
+      "description": "⚡️ Select a command",
+      "default": "getinfo",
+      "type": "pickString",
+      "options": [
+        "walletballance",
+        "listpeers",
+        "listchannels",
+        "pendingchannels",
+        "getnetworkinfo",
+        "describegraph",
+        "unlock",
+        "getinfo",
+        "queryroutes"
+      ]
+    },
+    {
+      "id": "wallet_address_type",
+      "description": "⚡️ Select a wallet address type",
+      "default": "np2wkh",
+      "type": "pickString",
+      "options": [
+        "p2wkh"
+      ]
+    },
+    {
+      "id": "node_public_key",
+      "description": "⚡️ Enter a node public key (you may also need a \"@{hostname}:{port}\")",
+      "type": "promptString"
+    },
+    {
+      "id": "satoshis",
+      "description": "⚡️ Enter a number of satoshis",
+      "type": "promptString",
+      "default": "100000"
+    },
+    {
+      "id": "satoshis",
+      "description": "⚡️ Enter a number of satoshis",
+      "type": "promptString",
+      "default": "100000"
+    },
+    {
+      "id": "funding_txid",
+      "description": "⚡️ Enter a funding transaction id. This is the first part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
+      "type": "promptString"
+    },
+    {
+      "id": "output_index",
+      "description": "⚡️ Enter a channel_point output index. This is the last part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
+      "type": "promptString"
+    },
+
   ]
 }
