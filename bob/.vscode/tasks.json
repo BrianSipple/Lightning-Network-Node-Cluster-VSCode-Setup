@@ -109,7 +109,19 @@
         "--amt=${input:satoshis}"
       ],
       "problemMatcher": []
-    }
+    },
+    {
+      "label": "Bob | lncli | send payment",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "sendpayment",
+        "--pay_req=${input:payment_request}"
+      ],
+      "problemMatcher": []
+    },
   ],
   "inputs": [
     {
@@ -121,6 +133,7 @@
         "walletbalance",
         "listpeers",
         "listchannels",
+        "listinvoices",
         "pendingchannels",
         "getnetworkinfo",
         "describegraph",
@@ -134,7 +147,8 @@
       "default": "np2wkh",
       "type": "pickString",
       "options": [
-        "p2wkh"
+        "p2wkh",
+        "np2wkh"
       ]
     },
     {
@@ -164,6 +178,10 @@
       "description": "⚡️ Enter a channel_point output index. This is the last part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
       "type": "promptString"
     },
-
+    {
+      "id": "payment_request",
+      "description": "⚡️ Enter a payment_request id",
+      "type": "promptString"
+    },
   ]
 }

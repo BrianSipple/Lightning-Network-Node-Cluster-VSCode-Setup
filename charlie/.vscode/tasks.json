@@ -121,6 +121,7 @@
         "walletbalance",
         "listpeers",
         "listchannels",
+        "listinvoices",
         "pendingchannels",
         "getnetworkinfo",
         "describegraph",
@@ -134,7 +135,8 @@
       "default": "np2wkh",
       "type": "pickString",
       "options": [
-        "p2wkh"
+        "p2wkh",
+        "np2wkh"
       ]
     },
     {

@@ -109,6 +109,18 @@
         "--amt=${input:satoshis}"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "Alice | lncli | add invoice",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "addinvoice",
+        "--amt=${input:satoshis}"
+      ],
+      "problemMatcher": []
     }
   ],
   "inputs": [
@@ -121,6 +133,7 @@
         "walletbalance",
         "listpeers",
         "listchannels",
+        "listinvoices",
         "pendingchannels",
         "getnetworkinfo",
         "describegraph",
@@ -134,7 +147,8 @@
       "default": "np2wkh",
       "type": "pickString",
       "options": [
-        "p2wkh"
+        "p2wkh",
+        "np2wkh"
       ]
     },
     {
