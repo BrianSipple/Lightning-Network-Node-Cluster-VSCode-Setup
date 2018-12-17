@@ -22,4 +22,4 @@ the colon-separated `channel_point` value that's listed for
 each channel when we run `lncli listchannels`.
 
 #### LND Faucet Node
->
+> 3c6e10ed1acd929fabedbae661ac11ae0b97a8105bcf4190feadd45959409e6c:0
