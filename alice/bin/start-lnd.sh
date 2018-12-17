@@ -9,7 +9,7 @@ lnd \
   --restlisten=localhost:8001 \
   --datadir=data \
   --logdir=logs \
-  --minchansize=100000 \
+  --minchansize=250000 \
   --alias=Alice \
   --color=#7272F8 \
   # --bitcoin.simnet \
