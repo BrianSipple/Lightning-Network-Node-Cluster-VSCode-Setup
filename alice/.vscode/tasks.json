@@ -94,6 +94,21 @@
         "--output_index=${input:output_index}"
       ],
       "problemMatcher": []
+    },
+    {
+      // Queries the channel router for a potential path to the destination that
+      // has sufficient flow for the amount including fees
+      "label": "Alice | lncli | query routes to node",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "queryroutes",
+        "--dest=${input:node_public_key}",
+        "--amt=${input:satoshis}"
+      ],
+      "problemMatcher": []
     }
   ],
   "inputs": [
@@ -103,15 +118,14 @@
       "default": "getinfo",
       "type": "pickString",
       "options": [
-        "walletballance",
+        "walletbalance",
         "listpeers",
         "listchannels",
         "pendingchannels",
         "getnetworkinfo",
         "describegraph",
         "unlock",
-        "getinfo",
-        "queryroutes"
+        "getinfo"
       ]
     },
     {
