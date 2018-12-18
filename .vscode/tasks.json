@@ -91,5 +91,62 @@
         "400"
       ]
     },
+    {
+      "label": "lncli | alice | run command",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=alice/data/chain/bitcoin/testnet/admin.macaroon",
+        "${input:lncli_command}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "lncli | bob | run command",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=bob/data/chain/bitcoin/testnet/admin.macaroon",
+        "${input:lncli_command}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "lncli | charlie | run command",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10003",
+        "--macaroonpath=charlie/data/chain/bitcoin/testnet/admin.macaroon",
+        "${input:lncli_command}"
+      ],
+      "problemMatcher": []
+    },
+  ],
+  "inputs": [
+    {
+      "id": "lncli_command",
+      "description": "⚡️ Select a command",
+      "default": "getinfo",
+      "type": "pickString",
+      "options": [
+        "walletbalance",
+        "listpeers",
+        "listchannels",
+        "listinvoices",
+        "listpayments",
+        "pendingchannels",
+        "getnetworkinfo",
+        "describegraph",
+        "unlock",
+        "getinfo",
+        "channelbalance",
+        "feereport",
+        "listchaintxns",
+        "closeallchannels"
+      ]
+    },
   ]
 }

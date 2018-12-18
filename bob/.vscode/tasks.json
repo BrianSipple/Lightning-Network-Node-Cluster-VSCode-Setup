@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Bob | lnd | start lnd",
+      "label": "Bob | start lnd",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -13,18 +13,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | run command",
-      "type": "shell",
-      "command": "lncli",
-      "args": [
-        "--rpcserver=localhost:10002",
-        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
-        "${input:lncli_command}"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Bob | lncli | create wallet",
+      "label": "lncli | bob | create wallet",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -34,7 +23,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | new wallet addrees",
+      "label": "lncli | bob | new wallet addrees",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -46,7 +35,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | connect to lnd peer node",
+      "label": "lncli | bob | connect to lnd peer node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -58,7 +47,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | disconnect from lnd peer node",
+      "label": "lncli | bob | disconnect from lnd peer node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -70,7 +59,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | open payment channel",
+      "label": "lncli | bob | open payment channel",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -83,7 +72,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | close payment channel",
+      "label": "lncli | bob | close payment channel",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -98,7 +87,7 @@
     {
       // Queries the channel router for a potential path to the destination that
       // has sufficient flow for the amount including fees
-      "label": "Bob | lncli | query routes to node",
+      "label": "lncli | bob | query routes to node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -111,7 +100,19 @@
       "problemMatcher": []
     },
     {
-      "label": "Bob | lncli | send payment",
+      "label": "lncli | bob | add invoice",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "addinvoice",
+        "--amt=${input:satoshis}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "lncli | bob | send payment",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -122,25 +123,20 @@
       ],
       "problemMatcher": []
     },
+    {
+      "label": "lncli | bob | decode payment request",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "decodepayreq",
+        "--pay_req=${input:payment_request}"
+      ],
+      "problemMatcher": []
+    },
   ],
   "inputs": [
-    {
-      "id": "lncli_command",
-      "description": "⚡️ Select a command",
-      "default": "getinfo",
-      "type": "pickString",
-      "options": [
-        "walletbalance",
-        "listpeers",
-        "listchannels",
-        "listinvoices",
-        "pendingchannels",
-        "getnetworkinfo",
-        "describegraph",
-        "unlock",
-        "getinfo"
-      ]
-    },
     {
       "id": "wallet_address_type",
       "description": "⚡️ Select a wallet address type",

@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Alice | lnd | start lnd",
+      "label": "Alice | start lnd",
       "type": "shell",
       "command": "zsh",
       "args": [
@@ -13,18 +13,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | run command",
-      "type": "shell",
-      "command": "lncli",
-      "args": [
-        "--rpcserver=localhost:10001",
-        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
-        "${input:lncli_command}"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Alice | lncli | create wallet",
+      "label": "lncli | alice | create wallet",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -34,7 +23,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | new wallet addrees",
+      "label": "lncli | alice | new wallet addrees",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -46,7 +35,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | connect to lnd peer node",
+      "label": "lncli | alice | connect to lnd peer node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -58,7 +47,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | disconnect from lnd peer node",
+      "label": "lncli | alice | disconnect from lnd peer node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -70,7 +59,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | open payment channel",
+      "label": "lncli | alice | open payment channel",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -83,7 +72,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | close payment channel",
+      "label": "lncli | alice | close payment channel",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -98,7 +87,7 @@
     {
       // Queries the channel router for a potential path to the destination that
       // has sufficient flow for the amount including fees
-      "label": "Alice | lncli | query routes to node",
+      "label": "lncli | alice | query routes to node",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -111,7 +100,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Alice | lncli | add invoice",
+      "label": "lncli | alice | add invoice",
       "type": "shell",
       "command": "lncli",
       "args": [
@@ -121,26 +110,33 @@
         "--amt=${input:satoshis}"
       ],
       "problemMatcher": []
-    }
+    },
+    {
+      "label": "lncli | alice | send payment",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "sendpayment",
+        "--pay_req=${input:payment_request}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "lncli | alice | decode payment request",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "decodepayreq",
+        "--pay_req=${input:payment_request}"
+      ],
+      "problemMatcher": []
+    },
   ],
   "inputs": [
-    {
-      "id": "lncli_command",
-      "description": "⚡️ Select a command",
-      "default": "getinfo",
-      "type": "pickString",
-      "options": [
-        "walletbalance",
-        "listpeers",
-        "listchannels",
-        "listinvoices",
-        "pendingchannels",
-        "getnetworkinfo",
-        "describegraph",
-        "unlock",
-        "getinfo"
-      ]
-    },
     {
       "id": "wallet_address_type",
       "description": "⚡️ Select a wallet address type",
