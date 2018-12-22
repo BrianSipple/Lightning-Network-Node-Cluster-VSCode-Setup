@@ -140,7 +140,7 @@
     {
       "id": "wallet_address_type",
       "description": "⚡️ Select a wallet address type",
-      "default": "np2wkh",
+      "default": "p2wkh",
       "type": "pickString",
       "options": [
         "p2wkh",
