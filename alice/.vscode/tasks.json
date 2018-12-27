@@ -6,7 +6,7 @@
     {
       "label": "Alice | start lnd",
       "type": "shell",
-      "command": "zsh",
+      "command": "sh",
       "args": [
         "${workspaceFolder}/bin/start-lnd.sh"
       ],
@@ -135,6 +135,18 @@
       ],
       "problemMatcher": []
     },
+    {
+      "label": "lncli | alice | lookup invoice",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10001",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "lookupinvoice",
+        "${input:payment_hash}"
+      ],
+      "problemMatcher": []
+    }
   ],
   "inputs": [
     {
@@ -159,10 +171,14 @@
       "default": "100000"
     },
     {
-      "id": "satoshis",
-      "description": "⚡️ Enter a number of satoshis",
-      "type": "promptString",
-      "default": "100000"
+      "id": "expiry",
+      "description": "⚡️ Enter the number of seconds in which this will expire",
+      "type": "promptString"
+    },
+    {
+      "id": "payment_request",
+      "description": "⚡️ Enter a payment request id",
+      "type": "promptString"
     },
     {
       "id": "funding_txid",
@@ -170,10 +186,14 @@
       "type": "promptString"
     },
     {
+      "id": "payment_hash",
+      "description": "⚡️ Enter a payment hash",
+      "type": "promptString"
+    },
+    {
       "id": "output_index",
       "description": "⚡️ Enter a channel_point output index. This is the last part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
       "type": "promptString"
-    },
-
+    }
   ]
 }

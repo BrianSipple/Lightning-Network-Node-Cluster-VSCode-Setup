@@ -6,90 +6,28 @@
     {
       "label": "Start bitcoind",
       "type": "shell",
-      "command": "zsh",
+      "command": "sh",
       "args": [
         "${workspaceFolder}/bin/start-bitcoind.sh"
       ]
     },
     {
-      "label": "Start btcd",
+      "label": "bitcoin-cli | run command",
       "type": "shell",
-      "command": "zsh",
+      "command": "bitcoin-cli",
       "args": [
-        "${workspaceFolder}/bin/start-btcd.sh"
-      ]
+        "${input:bitcoin_cli_command}"
+      ],
+      "problemMatcher": []
     },
     {
-      "label": "Start btcd | Alice",
+      "label": "start lnd",
       "type": "shell",
-      "command": "zsh",
+      "command": "sh",
       "args": [
-        "${workspaceFolder}/bin/start-btcd-alice.sh"
-      ]
-    },
-    {
-      "label": "Start btcd | Bob",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/start-btcd-bob.sh"
-      ]
-    },
-    {
-      "label": "Start btcd | Charlie",
-      "type": "shell",
-      "command": "zsh",
-      "args": [
-        "${workspaceFolder}/bin/start-btcd-charlie.sh"
-      ]
-    },
-    {
-      "label": "btcctl | Generate blocks | 1",
-      "type": "shell",
-      "command": "btcctl",
-      "args": [
-        "--simnet",
-        "--rpcuser=brian",
-        "--rpcpass=foobar",
-        "generate",
-        "1"
-      ]
-    },
-    {
-      "label": "btcctl | Generate blocks | 6",
-      "type": "shell",
-      "command": "btcctl",
-      "args": [
-        "--simnet",
-        "--rpcuser=brian",
-        "--rpcpass=foobar",
-        "generate",
-        "6"
-      ]
-    },
-    {
-      "label": "btcctl | Generate blocks | 100",
-      "type": "shell",
-      "command": "btcctl",
-      "args": [
-        "--simnet",
-        "--rpcuser=brian",
-        "--rpcpass=foobar",
-        "generate",
-        "100"
-      ]
-    },
-    {
-      "label": "btcctl | Generate blocks | 400",
-      "type": "shell",
-      "command": "btcctl",
-      "args": [
-        "--simnet",
-        "--rpcuser=brian",
-        "--rpcpass=foobar",
-        "generate",
-        "400"
-      ]
+        "${workspaceFolder}/${input:lnd_node_to_start}/bin/start-lnd.sh"
+      ],
+      "problemMatcher": []
     },
     {
       "label": "lncli | alice | run command",
@@ -124,29 +62,83 @@
       ],
       "problemMatcher": []
     },
+    {
+      "label": "local block count vs mainnet block count",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "bin/mainnet/local-block-count-vs-chain.sh"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "local block count vs testnet block count",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "bin/testnet/local-block-count-vs-chain.sh"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "lncli | bob | lookup invoice",
+      "type": "shell",
+      "command": "lncli",
+      "args": [
+        "--rpcserver=localhost:10002",
+        "--macaroonpath=data/chain/bitcoin/testnet/admin.macaroon",
+        "lookupinvoice",
+        "${input:payment_hash}"
+      ],
+      "problemMatcher": []
+    }
   ],
   "inputs": [
     {
-      "id": "lncli_command",
-      "description": "⚡️ Select a command",
-      "default": "getinfo",
+      "id": "wallet_address_type",
+      "description": "⚡️ Select a wallet address type",
+      "default": "p2wkh",
       "type": "pickString",
       "options": [
-        "walletbalance",
-        "listpeers",
-        "listchannels",
-        "listinvoices",
-        "listpayments",
-        "pendingchannels",
-        "getnetworkinfo",
-        "describegraph",
-        "unlock",
-        "getinfo",
-        "channelbalance",
-        "feereport",
-        "listchaintxns",
-        "closeallchannels"
+        "p2wkh",
+        "np2wkh"
       ]
     },
+    {
+      "id": "node_public_key",
+      "description": "⚡️ Enter a node public key (you may also need a \"@{hostname}:{port}\")",
+      "type": "promptString"
+    },
+    {
+      "id": "satoshis",
+      "description": "⚡️ Enter a number of satoshis",
+      "type": "promptString",
+      "default": "100000"
+    },
+    {
+      "id": "expiry",
+      "description": "⚡️ Enter the number of seconds in which this will expire",
+      "type": "promptString"
+    },
+    {
+      "id": "payment_request",
+      "description": "⚡️ Enter a payment request id",
+      "type": "promptString"
+    },
+    {
+      "id": "funding_txid",
+      "description": "⚡️ Enter a funding transaction id. This is the first part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
+      "type": "promptString"
+    },
+    {
+      "id": "payment_hash",
+      "description": "⚡️ Enter a payment hash",
+      "type": "promptString"
+    },
+    {
+      "id": "output_index",
+      "description": "⚡️ Enter a channel_point output index. This is the last part of the colon-separated `channel_point` value that's listed for each channel when we run `lncli listchannels`",
+      "type": "promptString"
+    }
   ]
 }

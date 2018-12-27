@@ -1,0 +1,1 @@
+curl -s https://api.smartbit.com.au/v1/blockchain/blocks | jq -r -c '.blocks[0].height'

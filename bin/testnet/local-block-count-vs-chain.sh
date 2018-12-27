@@ -3,5 +3,7 @@
 # you can proceed with lnd installation.
 
 echo \
-"Local Block Count: `bitcoin-cli getblockcount 2>&1`\n\
+"Local Block Count: \
+  `bitcoin-cli -conf=$(pwd)/bitcoin.conf \
+  getblockcount 2>&1`\n\
 Testnet Block Count: `curl -s https://testnet-api.smartbit.com.au/v1/blockchain/blocks | jq -r -c '.blocks[0].height'`"
