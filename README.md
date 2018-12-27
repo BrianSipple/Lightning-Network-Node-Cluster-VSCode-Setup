@@ -16,6 +16,20 @@ The basic flow for operating a local LND note on your machine is as follows:
 - Connect to peer nodes and open payment channels with them.
 
 
+## Getting Started
+
+### Requirements
+
+  - [lnd & lncli](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md)
+    + [See also](https://dev.lightning.community/guides/installation/)
+  - [bitcoind & bitcoin-cli](https://www.google.com/search?q=install+bitcoind)
+
+
+### Project Setup
+
+The only local configuration you should need to do before getting things up and running is setting the `externalip` option in your `lnd.conf` files. [Additional `lnd.conf` tweaks](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf) can be made as needed.
+
+
 ## Taking it to Mainnet
 
 This project is setup to use the Bitcoin Testnet by default. This is advisable until you feel comfortable with what you're doing.
