@@ -23,6 +23,7 @@ The basic flow for operating a local LND note on your machine is as follows:
   - [lnd & lncli](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md)
     + [See also](https://dev.lightning.community/guides/installation/)
   - [bitcoind & bitcoin-cli](https://www.google.com/search?q=install+bitcoind)
+  - [jq](https://github.com/stedolan/jq) (for running [block count scripts](./bin/))
 
 
 ### Project Setup
